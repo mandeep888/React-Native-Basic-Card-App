@@ -1,23 +1,23 @@
 import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 
-export default function FlatCards() {
+export default function ElevatedCards() {
   return (
     <SafeAreaView>
       <View>
-        <Text style={styles.headingText}>Flat Cards</Text>
+        <Text style={styles.headingText}>Elevated Cards</Text>
         <ScrollView horizontal>
           <View style={styles.container}>
-            <View style={[styles.card, styles.redCard]}>
+            <View style={[styles.cardElevated, styles.redCard]}>
               <Text style={styles.cardText}>Red</Text>
             </View>
-            <View style={[styles.card, styles.blueCard]}>
+            <View style={[styles.cardElevated, styles.blueCard]}>
               <Text style={styles.cardText}>Blue</Text>
             </View>
-            <View style={[styles.card, styles.greenCard]}>
+            <View style={[styles.cardElevated, styles.greenCard]}>
               <Text style={styles.cardText}>Green</Text>
             </View>
-            <View style={[styles.card, styles.blackCard]}>
+            <View style={[styles.cardElevated, styles.blackCard]}>
               <Text style={styles.cardText}>Black</Text>
             </View>
           </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 10,
   },
-  card: {
+  cardElevated: {
     width: 100,
     height: 100,
     margin: 10,
@@ -51,6 +51,14 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    elevation:10, // Android only
+    shadowOffset:{
+        width:5,
+        height:5,
+    },
+    shadowColor:"#fff",
+    shadowOpacity:1,
+    shadowRadius:5
   },
   cardText: {
     fontSize: 20,
